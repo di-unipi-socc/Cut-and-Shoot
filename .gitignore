@@ -1,5 +1,5 @@
 temp/
-poetry.lock
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -125,6 +125,7 @@ celerybeat.pid
 
 # Environments
 .venv
+.env
 env/
 venv/
 ENV/
