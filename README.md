@@ -1,5 +1,6 @@
 # Cut&Shoot
-Cut&Shoot is a tool to execute quantum circuits by applying *circuit cutting* and *shot-wise distribution* in pipeline.
+Note, this is the extended version of the old Cut&Shoot [prototype](https://github.com/di-unipi-socc/Cut-Shoot).
+Cut&Shoot is a tool to execute quantum circuits by applying *circuit cutting* and *shot-wise distribution* in the pipeline.
 ![Cut&Shoot pipeline](https://github.com/alebocci/cut-and-shoot/blob/main/cutnshoot.png?raw=true)
 
 The pipeline consists of four main steps:
@@ -19,7 +20,7 @@ pip install -r requirements.txt
 ## Usage
 Cut&Shoot can be used as a command line tool or as a Python library. 
 
-Inside the poetry environemnt and from the src folder, the command line tool can be used as following:
+Inside the poetry environment and from the src folder, the command line tool can be used as follows:
 ```bash
 usage: main.py [-h] [--configfile CONFIGFILE] [--times] [--params] [--stats] [--output OUTPUT] [--verbose]
 
@@ -72,9 +73,9 @@ circuit = path to the file containing the QASM circuit, e.g. "qasm_circuit.txt"
 observables = string representing the observable, e.g. "ZXY"
 shots = number of total shots of the run, e.g. 8000
 backends = list of two element list [provider, backend] where the pipeline will execute the circuit [["ibm_aer", "aer.fake_brisbane"], ["ibm_aer", "aer.fake_kyoto"], ["ibm_aer", "aer.fake_osaka"]]
-cut_strategy_module = name of the python script containg the cutting strategy, e.g. "pennylane_tool"
-shots_allocation_module = name of the python script containg the shots allocation strategy, e.g. "policies.qubit_proportional"
-sw_policy_module = name of the python script containg the shot-wise policies, e.g. "policies.sw_policies"
+cut_strategy_module = name of the python script containing the cutting strategy, e.g. "pennylane_tool"
+shots_allocation_module = name of the python script containing the shots allocation strategy, e.g. "policies.qubit_proportional"
+sw_policy_module = name of the python script containing the shot-wise policies, e.g. "policies.sw_policies"
 perf_exp_val = (optional) expected value of the circuit executed on a simulator without noiuse, e.g. 0
 parallel = boolean flag that indicates if each execution on a backend is on a different process, values: True or False
 metadata = (optional) data that will be copied in the output, must be JSON encodable, e.g. ["cutnshot","test2"]
@@ -85,11 +86,11 @@ The cutting strategy must be a Python script (e.g pennylane_tool.py), implementi
 - cut(circuit, observable_string) -> output, cut_data, cut_info
     circuit: QASM circuit to cut
     observable_string: observable to measure on the circuit
-    output: list of tuples (fragment, observable) where fragment is a QASM circuit without basis changes and observable is a list of string representing the observables
+    output: list of tuples (fragment, observable) where fragment is a QASM circuit without basis changes and observable is a list of strings representing the observables
     cut_data: dictionary containing data needed by the sew function
     cut_info: (optional) dictionary containing information about the cut recorded by the experiments, must be JSON serializable
 - sew(qasm_obs_expvals, sew_data)  -> results
-    qasm_obs_expvals: dictionary (fragment, observable) -> expected value, where (fragment , observable) are the tuples returned by the cut function and expected value is the expected value of the fragment execution
+    qasm_obs_expvals: dictionary (fragment, observable) -> expected value, where (fragment, observable) are the tuples returned by the cut function and expected value is the expected value of the fragment execution
     sew_data: dictionary containing data needed by the sew function
     results: results of the sew function
 ```
@@ -116,7 +117,7 @@ The shot-wise policies must be a Python script (e.g policies/sw_policies.py), im
 ```
 ## Output
 
-The simple output of the tool execution resume the pipeline steps and finally, the circuit expected value and its error are printed.
+The simple output of the tool execution resume the pipeline steps and finally, the circuit's expected value and its error are printed.
 For example:
 
 ```
