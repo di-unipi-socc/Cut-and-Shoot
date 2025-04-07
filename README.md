@@ -1,6 +1,6 @@
 # Cut&Shoot
 Cut&Shoot is a tool to execute quantum circuits by applying *circuit cutting* and *shot-wise distribution* in pipeline.
-![Cut&Shoot pipeline](https://github.com/alebocci/cutshot/blob/main/cutnshoot.png?raw=true)
+![Cut&Shoot pipeline](https://github.com/alebocci/cut-and-shot/blob/main/cutnshoot.png?raw=true)
 
 The pipeline consists of four main steps:
 1. **Cut:** The original circuit is divided into smaller fragments using the chosen *cutting tool*. The tool outputs all possible fragment variations, which are then treated as standalone quantum circuits with their respective shot allocation determined by a custom *allocation policy*.
@@ -114,7 +114,7 @@ The shot-wise policies must be a Python script (e.g policies/sw_policies.py), im
     probs: dictionary of dictionaries of floats, where probs[(circuit_id,observable)][state] is the probability of measuring the state in the circuit
     coefficients: dictionary of dictionaries of floats, where coefficients[provider][backend] is the weight of the backend in the policy
 ```
-## OUTPUT
+## Output
 
 The simple output of the tool execution resume the pipeline steps and finally, the circuit expected value and its error are printed.
 For example:
