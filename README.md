@@ -1,6 +1,6 @@
 # Cut&Shoot
 Cut&Shoot is a tool to execute quantum circuits by applying *circuit cutting* and *shot-wise distribution* in pipeline.
-![Cut&Shoot pipeline](https://github.com/alebocci/cut-and-shot/blob/main/cutnshoot.png?raw=true)
+![Cut&Shoot pipeline](https://github.com/alebocci/cut-and-shoot/blob/main/cutnshoot.png?raw=true)
 
 The pipeline consists of four main steps:
 1. **Cut:** The original circuit is divided into smaller fragments using the chosen *cutting tool*. The tool outputs all possible fragment variations, which are then treated as standalone quantum circuits with their respective shot allocation determined by a custom *allocation policy*.
