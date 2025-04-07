@@ -1,5 +1,6 @@
 # Cut&Shoot
 Note, this is the extended version of the old Cut&Shoot [prototype](https://github.com/di-unipi-socc/Cut-Shoot).
+
 Cut&Shoot is a tool to execute quantum circuits by applying *circuit cutting* and *shot-wise distribution* in the pipeline.
 ![Cut&Shoot pipeline](https://github.com/alebocci/cut-and-shoot/blob/main/cutnshoot.png?raw=true)
 
