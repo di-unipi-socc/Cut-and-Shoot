@@ -9,12 +9,11 @@ The pipeline consists of four main steps:
 4. **Sew:** Finally, the probability distributions of the fragments are combined to reconstruct the original circuit's probability distribution.
 
 ## Installation
-Cut&Shoot can be installed using poetry:
+Cut&Shoot can be installed using pip:
 ```bash
 git clone [this repository]
-cd cutshot
-poetry install
-poetry shell
+cd cut-and-shoot
+pip install -r requirements.txt
 ```
 
 ## Usage
