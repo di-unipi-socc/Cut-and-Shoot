@@ -1,22 +1,14 @@
 '''
 This file contains the implementation of the function for the shot allocation.
 The allocation must iplement the following function:
-<<<<<<< HEAD
     - allocate_shots(vcs, shots_assignment) -> vc_shots
-=======
-    - calculate_shots(vcs, shots_assignment) -> vc_shots
->>>>>>> 3c1d0a0f15e55ffadfb9dd144a121366ef72b917
         vcs: list of qukit.VirtualCircuit circuit where each circuit has a metadata field containing the number of qubits
         shots_allocation: parameters for the allocation
         vcs_shots: list of tuples (fragment, shots), where fragment is a qukit.VirtualCircuit circuit and shots is the number of shots to assign to the fragment
 '''
 import numpy as np
 
-<<<<<<< HEAD
 def allocate_shots(vcs, tot_shots):
-=======
-def calculate_shots(vcs, tot_shots):
->>>>>>> 3c1d0a0f15e55ffadfb9dd144a121366ef72b917
     
     twenty = int(tot_shots * 0.2)
     tot_shots = int(tot_shots - twenty)
